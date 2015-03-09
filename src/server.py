@@ -49,7 +49,7 @@ class HandleRoutes:
                 except ValidationError as v:
 			return (False,v.message)
 		except SchemaError as s:
-			return (True,s.message)
+			return (False,s.message)
 		return (True,"OK")
 
 	def calculate_servers(self,sList,noOfMessages,minServers,serversUsed):
