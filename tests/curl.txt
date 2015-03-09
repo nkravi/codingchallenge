@@ -1,0 +1,16 @@
+Tests
+
+valid cases
+curl -H "content-Type: application/json" -d '{"message":"nirmal","recipients":["312-843-2300","312-843-2301"]}' http://127.0.0.1:5000/handle
+
+curl -H "content-Type: application/json" -d '{"message":"nirmal","recipients":["312-843-2300","312-843-2301","312-843-2303","312-843-2304","312-843-2305","312-843-2306","312-843-2307","312-843-2308"]}' http://127.0.0.1:5000/handle
+
+invalid cases
+Invalid phone number
+curl -H "content-Type: application/json" -d '{"message":"nirmal","recipients":["312-843-230","312-843-2301"]}' http://127.0.0.1:5000/handle
+
+Invalid schema
+curl -H "content-Type: application/json" -d '{"message":"nirmal","recipient":["312-843-2300","312-843-2301"]}' http://127.0.0.1:5000/handle
+
+Duplicate Phone number
+curl -H "content-Type: application/json" -d '{"message":"nirmal","recipients":["312-843-2300","312-843-2300"]}' http://127.0.0.1:5000/handle
